@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="Skyward.Session1/Views/MainWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
