@@ -1,0 +1,64 @@
+<Window
+    Background="Transparent"
+    ExtendClientAreaToDecorationsHint="True"
+    Height="150"
+    TransparencyLevelHint="AcrylicBlur"
+    Width="280"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d"
+    x:Class="Skyward.Session1.Views.DialogWindow"
+    x:DataType="viewModels:DialogWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Skyward.Session1.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <ExperimentalAcrylicBorder IsHitTestVisible="False">
+            <ExperimentalAcrylicBorder.Material>
+                <ExperimentalAcrylicMaterial
+                    BackgroundSource="Digger"
+                    MaterialOpacity="0.45"
+                    TintColor="White"
+                    TintOpacity="1" />
+            </ExperimentalAcrylicBorder.Material>
+        </ExperimentalAcrylicBorder>
+
+        <Grid RowDefinitions="*,Auto">
+            <TextBlock
+                Classes="Dialog"
+                HorizontalAlignment="Center"
+                Text="登录失败，请检查用户名或密码"
+                TextAlignment="Center"
+                TextWrapping="Wrap"
+                VerticalAlignment="Center"
+                x:Name="MessageTextBlock" />
+            <Grid ColumnDefinitions="*,*" Grid.Row="1">
+                <Button
+                    Background="Transparent"
+                    BorderBrush="LightGray"
+                    BorderThickness="1"
+                    Click="Button_OnClick"
+                    Content="确定"
+                    FontSize="20"
+                    Foreground="Blue"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="140" />
+                <Button
+                    Background="Transparent"
+                    BorderBrush="LightGray"
+                    BorderThickness="1"
+                    Click="Button_OnClick"
+                    Content="取消"
+                    FontSize="20"
+                    Foreground="Blue"
+                    Grid.Column="1"
+                    HorizontalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="140" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
+
