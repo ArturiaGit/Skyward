@@ -1,8 +1,9 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
-using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
+using Microsoft.Extensions.DependencyInjection;
+using Skyward.Session1.Services;
 using Skyward.Session1.ViewModels;
 using Skyward.Session1.Views;
 
@@ -19,15 +20,19 @@ public partial class App : Application
     {
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            // Line below is needed to remove Avalonia data validation.
-            // Without this line you will get duplicate validations from both Avalonia and CT
             BindingPlugins.DataValidators.RemoveAt(0);
-            desktop.MainWindow = new MainWindow
-            {
-                DataContext = new MainWindowViewModel(),
-            };
-        }
 
+            ServiceCollection collection = new();
+            collection.AddCommandServices();
+            
+            ServiceProvider provider = collection.BuildServiceProvider();
+
+            
+            MainWindow mainWindow = provider.GetRequiredService<MainWindow>();
+            mainWindow.DataContext = provider.GetRequiredService<MainWindowViewModel>();
+            
+            desktop.MainWindow = mainWindow;
+        }
         base.OnFrameworkInitializationCompleted();
     }
 }

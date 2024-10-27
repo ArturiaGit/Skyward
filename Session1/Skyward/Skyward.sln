@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skyward.Session1", "Skyward.Session1\Skyward.Session1.csproj", "{AAE0377C-6D0C-4188-B2F5-A03C9F28B1E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skyward.Session1.WebAPI", "Skyward.Session1.WebAPI\Skyward.Session1.WebAPI.csproj", "{EA162041-F7D3-4F46-9D27-5273255255D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{AAE0377C-6D0C-4188-B2F5-A03C9F28B1E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE0377C-6D0C-4188-B2F5-A03C9F28B1E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE0377C-6D0C-4188-B2F5-A03C9F28B1E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA162041-F7D3-4F46-9D27-5273255255D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA162041-F7D3-4F46-9D27-5273255255D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA162041-F7D3-4F46-9D27-5273255255D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA162041-F7D3-4F46-9D27-5273255255D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
