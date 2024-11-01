@@ -1,0 +1,188 @@
+<Window
+    Title="Skyward Company Management System"
+    WindowStartupLocation="CenterScreen"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    mc:Ignorable="d"
+    x:Class="Skyward.Session1.Views.WarehouseDetailWindow"
+    x:DataType="viewModels:WarehouseDetailWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:Skyward.Session1.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Margin="50,25,50,10" RowDefinitions="0,Auto,20,Auto,20,Auto,20,*,50">
+        <!--  标题  -->
+        <TextBlock
+            Classes="Title"
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            Text="Warehouse Detail"
+            VerticalAlignment="Top" />
+
+        <!--  仓库名称  -->
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <TextBlock
+                Classes="Body"
+                Text="Warehouse："
+                VerticalAlignment="Center" />
+            <ComboBox
+                FontFamily="{StaticResource BodyFamily}"
+                FontSize="18"
+                ItemsSource="{Binding WarehouseNames}"
+                SelectedItem="{Binding SearchWarehouseName, Mode=OneWayToSource}"
+                Width="220"
+                x:Name="WarehouseComboBox" />
+            <Button
+                Background="Transparent"
+                BorderBrush="Black"
+                BorderThickness="1"
+                Command="{Binding SearchWarehouseAndPartByNameCommand}"
+                CommandParameter="{Binding #WarehouseComboBox.SelectedItem}"
+                Content="Search"
+                Margin="10,0,0,0" />
+        </StackPanel>
+
+        <!--  仓库信息  -->
+        <Grid Grid.Row="5" RowDefinitions="Auto,10,*">
+            <StackPanel Orientation="Horizontal" Spacing="5">
+                <Border
+                    Background="LightGray"
+                    Height="50"
+                    Width="15" />
+                <TextBlock
+                    Classes="Body"
+                    Text="Warehouse Information"
+                    VerticalAlignment="Center" />
+            </StackPanel>
+            <Border
+                BorderBrush="Black"
+                BorderThickness="1"
+                Grid.Row="2"
+                Height="120">
+                <Grid ColumnDefinitions="15,Auto,*,Auto,50" RowDefinitions="10,Auto,10,Auto,10,Auto">
+                    <StackPanel
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Orientation="Horizontal">
+                        <TextBlock Classes="Body" Text="Name：" />
+                        <TextBlock Classes="Body" Text="{Binding Warehouse.Name}" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="3"
+                        Grid.Row="1"
+                        Orientation="Horizontal">
+                        <TextBlock Classes="Body" Text="Phone：" />
+                        <TextBlock Classes="Body" Text="{Binding Warehouse.Phone}" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="1"
+                        Grid.Row="3"
+                        Orientation="Horizontal">
+                        <TextBlock Classes="Body" Text="Area：" />
+                        <TextBlock Classes="Body" Text="{Binding Warehouse.Area}" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="3"
+                        Grid.Row="3"
+                        Orientation="Horizontal">
+                        <TextBlock Classes="Body" Text="Address：" />
+                        <TextBlock
+                            Classes="Body"
+                            Text="{Binding Warehouse.Address}"
+                            TextWrapping="WrapWithOverflow" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        Orientation="Horizontal">
+                        <TextBlock Classes="Body" Text="Warehouse Keeper：" />
+                        <TextBlock Classes="Body" Text="{Binding Warehouse.WarehouseKeeper}" />
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Column="3"
+                        Grid.Row="5"
+                        Orientation="Horizontal">
+                        <TextBlock Classes="Body" Text="Last Checking Date：" />
+                        <TextBlock Classes="Body" Text="{Binding Warehouse.LastCheckingDate}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!--  仓库物品  -->
+        <Grid
+            ColumnDefinitions="*"
+            Grid.Row="7"
+            RowDefinitions="Auto,10,*">
+            <StackPanel
+                Grid.Row="0"
+                Orientation="Horizontal"
+                Spacing="5">
+                <Border
+                    Background="LightGray"
+                    Height="50"
+                    Width="15" />
+                <TextBlock
+                    Classes="Body"
+                    Text="Parts in Warehouse"
+                    VerticalAlignment="Center" />
+            </StackPanel>
+            <Border BorderThickness="1" Grid.Row="2">
+                <DataGrid
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CanUserResizeColumns="True"
+                    CanUserSortColumns="True"
+                    GridLinesVisibility="All"
+                    IsReadOnly="True"
+                    ItemsSource="{Binding Parts}"
+                    VerticalScrollBarVisibility="Auto">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Binding="{Binding ZoneName}"
+                            Header="Zone Name"
+                            Width="*" />
+                        <DataGridTextColumn
+                            Binding="{Binding PartName}"
+                            Header="Part Name"
+                            Width="*" />
+                        <DataGridTextColumn
+                            Binding="{Binding Category}"
+                            Header="Category"
+                            Width="*" />
+                        <DataGridTextColumn
+                            Binding="{Binding Specification}"
+                            Header="Specification"
+                            Width="*" />
+                        <DataGridTextColumn
+                            Binding="{Binding Amount}"
+                            Header="Amount"
+                            Width="*" />
+                        <DataGridTextColumn
+                            Binding="{Binding MinInventory}"
+                            Header="MinInventory"
+                            Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+        </Grid>
+
+        <!--  按钮  -->
+        <Button
+            Background="Transparent"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Create Inventory Checking Task"
+            FontFamily="{StaticResource BodyFamily}"
+            Grid.Row="8"
+            HorizontalAlignment="Right"
+            Margin="0,8,0,0" />
+    </Grid>
+</Window>
