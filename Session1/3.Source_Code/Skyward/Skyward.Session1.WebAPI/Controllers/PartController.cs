@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Skyward.Session1.WebAPI.CommandParameter;
 using Skyward.Session1.WebAPI.Models.DisplayDto;
 using Skyward.Session1.WebAPI.Services;
 
@@ -32,6 +33,33 @@ public class PartController(IPartService partService,ILogger<PartController> log
         {
             logger.LogError(ex, "获取零件信息失败");
             return StatusCode(StatusCodes.Status500InternalServerError,new {message = $"获取零件信息失败，请联系管理员，错误信息：{ex}"});
+        }
+    }
+    
+    [HttpPost("v1/parts")]
+    public async Task<ActionResult<IEnumerable<PartToBeCheckedDisplayDto>>> GetPartsToBeCheckedByWarehouseName_V1([FromBody] CreateInventoryCheckingTaskParameter parameter)
+    {
+        try
+        {
+            IEnumerable<PartToBeCheckedDisplayDto> parts = await partService.GetPartsToBeCheckedByWarehouseName(parameter.WarehouseName,parameter.ZoneName);
+            logger.LogInformation($"获取仓库 {parameter.WarehouseName} 的待盘点零件信息成功");
+            
+            return Ok(parts);
+        }
+        catch (ArgumentNullException ex)
+        {
+            logger.LogError(ex, $"请求参数为空");
+            return BadRequest(new {message = $"请求参数不能为空",status = StatusCodes.Status400BadRequest});
+        }
+        catch (InvalidOperationException ex)
+        {
+            logger.LogWarning(ex, "未找到任何盘点任务");
+            return NotFound(new {message = ex.Message,status = StatusCodes.Status404NotFound});
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "获取待盘点零件信息失败");
+            return StatusCode(StatusCodes.Status500InternalServerError,new {message = $"获取待盘点零件信息失败，请联系管理员，错误信息：{ex}"});
         }
     }
 }

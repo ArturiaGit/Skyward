@@ -26,12 +26,14 @@ public static class ServiceCollectionExtend
         
         services.AddSingleton<MainWindowViewModel>();
         services.AddSingleton<WarehouseDetailWindowViewModel>();
+        services.AddSingleton<CreateInventoryCheckingTaskWindowViewModel>();
         
         services.AddSingleton<MainWindow>(r =>
         {
             var vm = r.GetRequiredService<MainWindowViewModel>();
             return new MainWindow(vm, r);
         });
-        services.AddSingleton<WarehouseDetailWindow>();
+        services.AddSingleton<WarehouseDetailWindow>(r => new WarehouseDetailWindow(r));
+        services.AddSingleton<CreateInventoryCheckingTaskWindow>();
     }
 }

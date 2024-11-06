@@ -7,4 +7,5 @@ public interface IWarehouseService
 {
     Task<IEnumerable<string>> GetWarehouseNamesAsync();
     Task<WarehouseDisplayDto?> GetWarehouseInfoAsync(string name);
+    Task<IEnumerable<string>> GetZoneNamesAsync(string warehouseName);
 }

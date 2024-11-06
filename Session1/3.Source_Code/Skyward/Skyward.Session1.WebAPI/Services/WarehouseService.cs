@@ -49,4 +49,26 @@ public class WarehouseService(MyDbContext dbContext) : IWarehouseService
 
         return warehouse;
     }
+
+    /// <summary>
+    /// 获取库区名称
+    /// </summary>
+    /// <param name="warehouseName"> 仓库名称 </param>
+    /// <returns> 库区名称 </returns>
+    /// <exception cref="ArgumentNullException"> 仓库名称不能为空 </exception>
+    public async Task<IEnumerable<string>> GetZoneNamesAsync(string warehouseName)
+    {
+        if(string.IsNullOrEmpty(warehouseName))
+            throw new ArgumentNullException(nameof(warehouseName),"仓库名称不能为空");
+
+        IEnumerable<string>? zoneNames = await dbContext.Warehouses
+            .TagWith("获取库区名称")
+            .Where(r => r.Name == warehouseName)
+            .SelectMany(r => r.Zones)
+            .Select(r => r.Name)
+            .OrderBy(r => r)
+            .ToArrayAsync();
+        
+        return zoneNames;
+    }
 }

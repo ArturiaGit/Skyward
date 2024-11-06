@@ -25,15 +25,24 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/990ebf52fc408ca45929fd176d2740675a67fab8/src/libraries/Microsoft.Extensions.DependencyInjection.Abstractions/src/ServiceProviderServiceExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/990ebf52fc408ca45929fd176d2740675a67fab8/src/libraries/Microsoft.Extensions.DependencyInjection/src/ServiceLookup/CallSiteFactory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/00f3784ef64d4453a2630f8508a23171f9200/45/6467ad61/CalendarDatePicker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/00f3784ef64d4453a2630f8508a23171f9200/50/355ab18e/Calendar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c1f0ba61b57c4ccda1cb6295a9297d17f8e00/2e/e7b4a387/Window.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c47327607d1a4ddca06ba2bc6b6ba8261cc800/2d/d4624043/EffectiveValue`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c47327607d1a4ddca06ba2bc6b6ba8261cc800/85/f86bcf64/DispatcherOperation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c47327607d1a4ddca06ba2bc6b6ba8261cc800/cd/cd80fa57/AvaloniaPropertyChangedEventArgs`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c47327607d1a4ddca06ba2bc6b6ba8261cc800/d2/56dfe606/ClrPropertyInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d7b19b5babc444d5a6c8fcc11251107ae8c00/05/621bc1cf/LogFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/0f04514edab49ce421fdf1e12235d4b26bfd8cc473ef7f135bb285d607a9e8/ConsolePal.Windows.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/13e79b2a7b78394ccf591d3454bff5bfb14e692da011a7e38b66c2312b365a/String.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/294078ecfce6fdb942ecfee089f09717de7a6fcfe5efd9fdb6f4f93c0fb4813/ActionMethodExecutor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2c8e7ca976f350cba9836d5565dac56b11e0b56656fa786460eb1395857a6fa/ThrowHelper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3751f63369d883c5ea470ed57be8df2515b62dde23c49b86e1bbaf8c27b/CallSiteRuntimeResolver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4946bb83e77a5fa371240b4efd09afb7993dae/Skyward.Session1.ViewModels.CreateInventoryCheckingTaskWindowViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/59109b68aa8966a8b4c17bb8642684239e9598dc1f117d294c355534a932786/CastHelpers.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/75b8d87e8213ec31f966245ed066d165f58ef/Skyward.Session1.ViewModels.CreateInventoryCheckingTaskWindowViewModel.CreateCheckTaskAsync.g.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85b9fca4cac38f82cf22feafbd698ed5b77189f/Skyward.Session1.ViewModels.CreateInventoryCheckingTaskWindowViewModel.g.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cfe540186e1777b77d9ce13918594674cdf294c66b9582775ad6c29ed383fa/Char.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d882146b4f265f10bcbec2663fce248db9ffec5fa1aeaf76e32a11ba5eafcd6/MethodBaseInvoker.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -54,13 +63,13 @@
     &quot;.NET 启动设置配置文件.Skyward.Session1.WebAPI: https.executor&quot;: &quot;Debug&quot;,
     &quot;.NET 项目.Skyward.Session1.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/WarehouseDetailWindow&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/CreateInventoryCheckingTask&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.ApplicationConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -156,7 +165,12 @@
       <workItem from="1730353848068" duration="10919000" />
       <workItem from="1730420981271" duration="18459000" />
       <workItem from="1730447511436" duration="10409000" />
-      <workItem from="1730463258199" duration="838000" />
+      <workItem from="1730463258199" duration="6400000" />
+      <workItem from="1730599504714" duration="13209000" />
+      <workItem from="1730682082763" duration="7477000" />
+      <workItem from="1730697871478" duration="6831000" />
+      <workItem from="1730768224658" duration="35011000" />
+      <workItem from="1730858789260" duration="6117000" />
     </task>
     <servers />
   </component>

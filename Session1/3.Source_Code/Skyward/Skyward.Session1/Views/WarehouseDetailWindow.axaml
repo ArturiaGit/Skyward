@@ -1,8 +1,8 @@
 <Window
+    Height="720"
     Title="Skyward Company Management System"
+    Width="1280"
     WindowStartupLocation="CenterScreen"
-    d:DesignHeight="720"
-    d:DesignWidth="1280"
     mc:Ignorable="d"
     x:Class="Skyward.Session1.Views.WarehouseDetailWindow"
     x:DataType="viewModels:WarehouseDetailWindowViewModel"
@@ -179,6 +179,7 @@
             Background="Transparent"
             BorderBrush="Black"
             BorderThickness="1"
+            Click="Button_OnClick"
             Content="Create Inventory Checking Task"
             FontFamily="{StaticResource BodyFamily}"
             Grid.Row="8"

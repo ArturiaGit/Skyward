@@ -9,4 +9,5 @@ public interface IWarehouseService
 {
     Task<ObservableCollection<string>> GetWarehouseNamesAsync();
     Task<Warehouse> GetWarehouseInfoByNameAsync(string warehouseName);
+    Task<ObservableCollection<string>> GetZoneNamesAsync(string warehouseName);
 }

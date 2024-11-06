@@ -8,4 +8,5 @@ namespace Skyward.Session1.Services;
 public interface IPartService
 {
     Task<ObservableCollection<PartDisplayDto>> GetPartInfoByWarehouseName(string warehouseName);
+    Task<ObservableCollection<PartToBeCheckedDisplayDto>> GetPartToBeCheckedInfoByWarehouseName(string? warehouseName,string? zoneName);
 }

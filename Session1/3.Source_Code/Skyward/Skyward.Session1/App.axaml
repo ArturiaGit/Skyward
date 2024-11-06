@@ -2,6 +2,7 @@
     RequestedThemeVariant="Default"
     x:Class="Skyward.Session1.App"
     xmlns="https://github.com/avaloniaui"
+    xmlns:converts="clr-namespace:Skyward.Session1.Converts"
     xmlns:local="using:Skyward.Session1"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--  "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options.  -->
@@ -9,6 +10,7 @@
     <Application.Resources>
         <FontFamily x:Key="TitleFamily">avares://Skyward.Session1/Assets/Fonts/MyriadPro-Bold.otf#Myriad Pro</FontFamily>
         <FontFamily x:Key="BodyFamily">avares://Skyward.Session1/Assets/Fonts/Helvetica.ttf#Helvetica</FontFamily>
+        <converts:TaskTypeToVisibilityConverter x:Key="TaskTypeToVisibilityConverter" />
     </Application.Resources>
 
     <Application.DataTemplates>

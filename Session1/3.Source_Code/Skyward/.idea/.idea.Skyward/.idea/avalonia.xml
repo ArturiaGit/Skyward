@@ -6,6 +6,7 @@
         <entry key="Skyward.Session1/App.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Styles/TextBlockStyle.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/UserControls/DialogWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
+        <entry key="Skyward.Session1/Views/CreateInventoryCheckingTaskWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Views/DialogWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Views/MainWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Views/WarehouseDetailWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />

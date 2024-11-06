@@ -116,4 +116,58 @@ public class WarehouseService(Lazy<HttpClient> httpClient) : IWarehouseService
 
         return warehouse;
     }
+
+    /// <summary>
+    /// 获取指定仓库的库区名称列表
+    /// </summary>
+    /// <param name="warehouseName"> 仓库名称 </param>
+    /// <returns> 库区列表 </returns>
+    /// <exception cref="ArgumentNullException"> 参数不能为空 </exception>
+    /// <exception cref="HttpRequestException"> 请求失败 </exception>
+    /// <exception cref="InvalidOperationException"> 找不到指定仓库的库区 </exception>
+    /// <exception cref="JsonException"> 解析失败 </exception>
+    public async Task<ObservableCollection<string>> GetZoneNamesAsync(string warehouseName)
+    {
+        if(string.IsNullOrWhiteSpace(warehouseName))
+            throw new ArgumentNullException(nameof(warehouseName), $"{nameof(warehouseName)} 不能为 null 或空.");
+        
+        string encodedName = Uri.EscapeDataString(warehouseName);
+        string requestUri = $"api/v1/warehouses/{encodedName}/zones";
+
+        HttpClient client = httpClient.Value;
+        HttpResponseMessage responseMessage;
+        try
+        {
+            responseMessage = await client.GetAsync(requestUri);
+        }
+        catch (HttpRequestException ex)
+        {
+            throw new HttpRequestException("网络连接失败或请求无法完成。", ex);
+        }
+        
+        if(responseMessage.StatusCode == HttpStatusCode.NotFound)
+            throw new InvalidOperationException($"未找到名称为 '{warehouseName}' 的库区。");
+
+        if (!responseMessage.IsSuccessStatusCode)
+        {
+            string errorContent = await responseMessage.Content.ReadAsStringAsync();
+            throw new HttpRequestException($"获取库区名称失败，状态码: {(int)responseMessage.StatusCode} ({responseMessage.ReasonPhrase}). 内容: {errorContent}");
+        }
+        
+        string message = await responseMessage.Content.ReadAsStringAsync();
+        ObservableCollection<string>? zoneNames;
+        try
+        {
+            zoneNames = JsonSerializer.Deserialize<ObservableCollection<string>>(message);
+        }
+        catch (JsonException ex)
+        {
+            throw new JsonException("无法解析库区名称的响应内容。", ex);
+        }
+        
+        if(zoneNames is null)
+            throw new JsonException("解析后的库区名称列表为 null。");
+
+        return zoneNames;
+    }
 }

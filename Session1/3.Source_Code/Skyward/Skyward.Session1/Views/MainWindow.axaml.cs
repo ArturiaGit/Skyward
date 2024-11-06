@@ -19,6 +19,11 @@ public partial class MainWindow : Window
         viewModel.OnLoginSuccess += HandleLoginSuccess;
     }
 
+    public MainWindow()
+    {
+        InitializeComponent();
+    }
+
     private void HandleLoginSuccess()
     {
         var warehouseDetailWindow = _serviceProvider.GetRequiredService<WarehouseDetailWindow>();

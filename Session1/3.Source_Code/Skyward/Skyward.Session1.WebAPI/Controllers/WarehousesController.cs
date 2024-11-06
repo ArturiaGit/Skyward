@@ -50,4 +50,32 @@ public class WarehousesController(IWarehouseService warehouseService, ILogger<Wa
             return BadRequest(new { message = "仓库名称不能为空.", code = 400 });
         }
     }
+    
+    [HttpGet("{warehouseName}/zones")]
+    public async Task<ActionResult<IEnumerable<string>>> GetZoneNamesAsync_V1([FromRoute]string warehouseName)
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(warehouseName))
+            {
+                logger.LogError("仓库名称为空.");
+                return BadRequest(new { message = "仓库名称不能为空.", code = 400 });
+            }
+
+            IEnumerable<string> zoneNames = await warehouseService.GetZoneNamesAsync(warehouseName);
+            if (!zoneNames.Any())
+            {
+                logger.LogWarning($"仓库 {warehouseName} 不存在.");
+                return NotFound(new { message = $"仓库 {warehouseName} 不存在.", code = 404 });
+            }
+
+            logger.LogInformation($"获取仓库 {warehouseName} 库区名称成功.");
+            return Ok(zoneNames);
+        }
+        catch (ArgumentNullException ex)
+        {
+            logger.LogError(ex, "仓库名称不能为空.");
+            return BadRequest(new { message = "仓库名称不能为空.", code = 400 });
+        }
+    }
 }
