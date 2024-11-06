@@ -144,7 +144,6 @@
             Grid.Row="9"
             HorizontalAlignment="Left"
             Text="Parts to be checked(80)：" />
-
         <Border
             BorderBrush="Gray"
             BorderThickness="1"
@@ -188,5 +187,16 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
+
+        <!--  Buttons  -->
+        <Button
+            Background="Transparent"
+            BorderBrush="Black"
+            BorderThickness="1"
+            Content="Submit"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="13"
+            HorizontalAlignment="Center" />
     </Grid>
 </Window>

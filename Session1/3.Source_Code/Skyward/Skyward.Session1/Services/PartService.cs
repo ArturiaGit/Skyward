@@ -21,7 +21,7 @@ public class PartService(Lazy<HttpClient> httpClient) : IPartService
 
         HttpClient client = httpClient.Value;
 
-        HttpResponseMessage responseMessage;
+        HttpResponseMessage responseMessage; 
         try
         {
             responseMessage = await client.GetAsync(requestUri);

@@ -51,6 +51,7 @@ public class WarehousesController(IWarehouseService warehouseService, ILogger<Wa
         }
     }
     
+     
     [HttpGet("{warehouseName}/zones")]
     public async Task<ActionResult<IEnumerable<string>>> GetZoneNamesAsync_V1([FromRoute]string warehouseName)
     {

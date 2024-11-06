@@ -9,6 +9,7 @@
         <entry key="Skyward.Session1/Views/CreateInventoryCheckingTaskWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Views/DialogWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Views/MainWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
+        <entry key="Skyward.Session1/Views/ViewInventoryCheckingTaskWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
         <entry key="Skyward.Session1/Views/WarehouseDetailWindow.axaml" value="Skyward.Session1/Skyward.Session1.csproj" />
       </map>
     </option>

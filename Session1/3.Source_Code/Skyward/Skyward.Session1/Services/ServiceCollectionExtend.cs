@@ -35,5 +35,6 @@ public static class ServiceCollectionExtend
         });
         services.AddSingleton<WarehouseDetailWindow>(r => new WarehouseDetailWindow(r));
         services.AddSingleton<CreateInventoryCheckingTaskWindow>();
+        services.AddSingleton<ViewInventoryCheckingTaskWindow>();
     }
 }

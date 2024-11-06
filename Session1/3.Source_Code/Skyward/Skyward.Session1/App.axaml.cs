@@ -29,8 +29,8 @@ public partial class App : Application
             
             ServiceProvider provider = collection.BuildServiceProvider();
             
-            WarehouseDetailWindow mainWindow = provider.GetRequiredService<WarehouseDetailWindow>();
-            mainWindow.DataContext = provider.GetRequiredService<WarehouseDetailWindowViewModel>();
+            ViewInventoryCheckingTaskWindow mainWindow = provider.GetRequiredService<ViewInventoryCheckingTaskWindow>();
+            // mainWindow.DataContext = provider.GetRequiredService<WarehouseDetailWindowViewModel>();
             
             desktop.MainWindow = mainWindow;
         }
